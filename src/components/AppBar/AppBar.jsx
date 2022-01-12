@@ -16,7 +16,6 @@ const AppBar = () => {
   };
 
   const accessToken = useSelector(state => state.auth.accessToken);
-
   snowflakes.start();
   return (
     <>

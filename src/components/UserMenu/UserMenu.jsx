@@ -37,17 +37,15 @@ const UserMenu = () => {
   const { t } = useTranslation();
 
   const refreshToken = useSelector(state => state.auth.refreshToken);
-  // console.log('refresh user', refreshToken);
-  const goToHomePage = () => {
-    // logout(dispatch(logOut(refreshToken)))
 
-    logout()
+  console.log('refreshUser', refreshToken);
+  const goToHomePage = () => {
+    logout(refreshToken)
       .then(() => {
-        dispatch(logOut(refreshToken));
+        dispatch(logOut());
       })
       .catch(error => console.log(error.message));
     handleClose();
-
     navigate('/');
   };
 
